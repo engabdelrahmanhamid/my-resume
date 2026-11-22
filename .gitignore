@@ -2,4 +2,4 @@
 0*-*.md
 .DS_Store
 # Original uncompressed photo (optimized copy lives in assets/images)
-images/
+/images/

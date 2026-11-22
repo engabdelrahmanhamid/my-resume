@@ -1104,7 +1104,9 @@ svg { flex-shrink: 0; }
   color: var(--muted);
 }
 
-.contact-actions { display: flex; justify-content: center; }
+.contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.footer-link { margin-inline-start: auto; white-space: nowrap; color: var(--text); font-weight: 600; text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat; transition: background-size .4s var(--ease), color .3s; }
+.footer-link:hover { color: var(--accent); background-size: 100% 1.5px; }
 
 .email-row {
   display: flex;

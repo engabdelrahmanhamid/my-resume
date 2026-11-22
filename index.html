@@ -1,24 +1,33 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>عبدالرحمن الصالح | مطوّر مواقع وتطبيقات ويب</title>
   <meta name="description" content="الموقع الشخصي لعبدالرحمن الصالح، مطوّر مواقع وتطبيقات ويب من جدة. تعرّف على خبرته ومهاراته وطرق التواصل معه.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f4ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0c0f" media="(prefers-color-scheme: dark)">
 
   <meta property="og:type" content="profile">
   <meta property="og:locale" content="ar_SA">
   <meta property="og:title" content="عبدالرحمن الصالح | مطوّر مواقع وتطبيقات ويب">
-  <meta property="og:description" content="مطوّر مواقع وتطبيقات ويب من جدة. خبرة في WordPress وNext.js وتصميم واجهات واضحة.">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:description" content="مطوّر مواقع وتطبيقات ويب من جدة. أبني مواقع الشركات والمتاجر الإلكترونية باستخدام WordPress وNext.js.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    document.documentElement.classList.replace('no-js', 'js');
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
 
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+  <link rel="preload" as="image" href="./assets/images/portrait.webp" type="image/webp">
   <link rel="stylesheet" href="./style.css">
 
   <script type="application/ld+json">
@@ -36,66 +45,207 @@
     "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "Next.js", "WordPress", "WooCommerce", "تحليل المتطلبات", "تصميم الواجهات"]
   }
   </script>
+  <script src="./script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
 
+  <!-- Decorative layers -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="bg-spot"></div>
+  </div>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="cursor" aria-hidden="true"></div>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top">عبدالرحمن الصالح</a>
-      <nav aria-label="التنقل الرئيسي">
+      <a class="brand" href="#top" aria-label="عبدالرحمن الصالح، العودة إلى الأعلى">
+        <span class="brand-mark" aria-hidden="true">ع</span>
+        <span class="brand-name">عبدالرحمن الصالح</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="التنقل الرئيسي">
         <ul class="nav-list">
-          <li><a href="#about">نبذة</a></li>
-          <li><a href="#skills">المهارات</a></li>
-          <li><a href="#contact">تواصل</a></li>
+          <li><a href="#about" data-nav>نبذة</a></li>
+          <li><a href="#skills" data-nav>المهارات</a></li>
+          <li><a href="#contact" data-nav>تواصل</a></li>
+          <li class="nav-indicator" aria-hidden="true"></li>
         </ul>
       </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="تبديل المظهر الفاتح والداكن">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.2M19.8 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/></svg>
+        </button>
+        <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="فتح القائمة">
+          <span class="burger" aria-hidden="true"><span></span><span></span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="main">
+    <!-- HERO -->
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="container">
-        <h1 id="hero-title">عبدالرحمن الصالح</h1>
-        <p class="role">مطوّر مواقع وتطبيقات ويب</p>
-        <p class="location">
-          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
-          جدة، المملكة العربية السعودية
-        </p>
-        <a class="button" href="#contact">تواصل معي</a>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow intro" style="--i:0">
+            <span class="pulse" aria-hidden="true"></span>
+            متاح لمشاريع جديدة
+          </p>
+
+          <h1 id="hero-title" class="hero-title">
+            <span class="line"><span class="intro-up" style="--i:1">عبدالرحمن</span></span>
+            <span class="line"><span class="intro-up gradient-text" style="--i:2">الصالح</span></span>
+          </h1>
+
+          <p class="role intro" style="--i:3">مطوّر مواقع وتطبيقات ويب</p>
+
+          <p class="hero-sub intro" style="--i:4">
+            <span class="sr-only">أبني مواقع الشركات والمتاجر الإلكترونية وتطبيقات الويب بواجهات واضحة.</span>
+            <span aria-hidden="true">
+              أبني
+              <span class="rotator">
+                <span class="is-active">مواقع الشركات</span>
+                <span>المتاجر الإلكترونية</span>
+                <span>تطبيقات الويب</span>
+              </span>
+              بواجهات واضحة.
+            </span>
+          </p>
+
+          <p class="location intro" style="--i:5">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+            جدة، المملكة العربية السعودية
+          </p>
+
+          <div class="hero-actions intro" style="--i:6">
+            <a class="btn btn-primary magnetic" href="#contact">
+              <span>تواصل معي</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+            </a>
+            <a class="btn btn-ghost magnetic" href="#skills"><span>استعرض المهارات</span></a>
+          </div>
+        </div>
+
+        <div class="hero-visual intro-visual" data-parallax>
+          <div class="stage">
+            <div class="orbit orbit-1 layer" style="--depth:.4"><span class="dot"></span></div>
+            <div class="orbit orbit-2 layer" style="--depth:.7"><span class="dot"></span><span class="dot dot-b"></span></div>
+            <div class="arch layer" style="--depth:.25"></div>
+            <img class="portrait layer" style="--depth:.12"
+                 src="./assets/images/portrait.webp" width="820" height="1229"
+                 alt="صورة عبدالرحمن الصالح مرتديًا بدلة رسمية رمادية ويبتسم"
+                 fetchpriority="high" decoding="async">
+
+            <div class="chip chip-1 layer" style="--depth:1.3"><span class="chip-in"><b>&lt;/&gt;</b> HTML · CSS</span></div>
+            <div class="chip chip-2 layer" style="--depth:1.1"><span class="chip-in"><b class="c-react">⚛</b> React · Next.js</span></div>
+            <div class="chip chip-3 layer" style="--depth:1.5"><span class="chip-in"><b class="c-wp">W</b> WordPress</span></div>
+
+            <div class="code-card layer" style="--depth:.9" dir="ltr" aria-hidden="true">
+              <div class="code-top"><i></i><i></i><i></i><span>developer.js</span></div>
+              <pre><code><span class="ln" style="--n:13;--l:0"><span class="k">const</span> dev = {</span>
+<span class="ln" style="--n:17;--l:1">  city: <span class="s">"Jeddah"</span>,</span>
+<span class="ln" style="--n:27;--l:2">  stack: [<span class="s">"Next.js"</span>, <span class="s">"WP"</span>],</span>
+<span class="ln" style="--n:14;--l:3">  focus: <span class="s">"UX"</span>,</span>
+<span class="ln last" style="--n:2;--l:4">};</span></code></pre>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <a class="scroll-hint" href="#about" aria-label="انتقل إلى النبذة">
+        <span class="mouse" aria-hidden="true"><span></span></span>
+      </a>
     </section>
 
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true" dir="ltr">
+      <div class="marquee-track">
+        <span>HTML</span><i>✦</i><span>CSS</span><i>✦</i><span>JavaScript</span><i>✦</i><span>React</span><i>✦</i><span>Next.js</span><i>✦</i><span>WordPress</span><i>✦</i><span>WooCommerce</span><i>✦</i><span>UI / UX</span><i>✦</i>
+        <span>HTML</span><i>✦</i><span>CSS</span><i>✦</i><span>JavaScript</span><i>✦</i><span>React</span><i>✦</i><span>Next.js</span><i>✦</i><span>WordPress</span><i>✦</i><span>WooCommerce</span><i>✦</i><span>UI / UX</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
     <section class="section" id="about" aria-labelledby="about-title">
-      <div class="container narrow">
-        <h2 id="about-title">نبذة عني</h2>
-        <p>أنا عبدالرحمن الصالح، مطوّر مواقع وتطبيقات ويب بخلفية في علوم الحاسب.</p>
-        <p>أعمل على مواقع الشركات والمتاجر الإلكترونية باستخدام WordPress وNext.js.</p>
-        <p>أهتم بتبسيط خطوات المستخدم وتحويل احتياجات فرق العمل إلى واجهات واضحة.</p>
+      <div class="container about-grid">
+        <div class="section-head" data-reveal>
+          <p class="kicker"><span>01</span> من أنا</p>
+          <h2 id="about-title">نبذة عني</h2>
+        </div>
+
+        <div class="about-body">
+          <div class="about-text" data-words>
+            <p>أنا عبدالرحمن الصالح، مطوّر مواقع وتطبيقات ويب بخلفية في علوم الحاسب.</p>
+            <p>أعمل على مواقع الشركات والمتاجر الإلكترونية باستخدام WordPress وNext.js.</p>
+            <p>أهتم بتبسيط خطوات المستخدم وتحويل احتياجات فرق العمل إلى واجهات واضحة.</p>
+          </div>
+
+          <ul class="focus-list">
+            <li class="focus" data-reveal style="--d:0">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16M15 10h4a1 1 0 0 1 1 1v10M3 21h18M8 8h3M8 12h3M8 16h3"/></svg>
+              <span>مواقع الشركات</span>
+            </li>
+            <li class="focus" data-reveal style="--d:1">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l-1.2 12.1a1 1 0 0 1-1 .9H7.2a1 1 0 0 1-1-.9L5 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+              <span>المتاجر الإلكترونية</span>
+            </li>
+            <li class="focus" data-reveal style="--d:2">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg>
+              <span>واجهات واضحة</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="section alt" id="skills" aria-labelledby="skills-title">
+    <!-- SKILLS -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="container">
-        <h2 id="skills-title">المهارات</h2>
+        <div class="section-head center" data-reveal>
+          <p class="kicker"><span>02</span> ما أتقنه</p>
+          <h2 id="skills-title">المهارات</h2>
+        </div>
+
         <ul class="skills">
-          <li class="skill">
+          <li class="skill tilt" data-reveal style="--d:0">
+            <span class="skill-mark" aria-hidden="true">&lt;/&gt;</span>
+            <span class="skill-num" aria-hidden="true">01</span>
+            <span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 6 2 12l6 6M16 6l6 6-6 6"/></svg></span>
             <h3>HTML وCSS</h3>
             <p>بناء صفحات متجاوبة وتنظيم المحتوى وتنسيقه.</p>
           </li>
-          <li class="skill">
+          <li class="skill tilt" data-reveal style="--d:1">
+            <span class="skill-mark" aria-hidden="true">JS</span>
+            <span class="skill-num" aria-hidden="true">02</span>
+            <span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></span>
             <h3>JavaScript</h3>
             <p>إضافة تفاعلات واضحة للواجهات داخل المتصفح.</p>
           </li>
-          <li class="skill">
+          <li class="skill tilt" data-reveal style="--d:0">
+            <span class="skill-mark" aria-hidden="true">⚛</span>
+            <span class="skill-num" aria-hidden="true">03</span>
+            <span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.8"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg></span>
             <h3>React وNext.js</h3>
             <p>بناء واجهات تطبيقات الويب وتنظيم مكوناتها.</p>
           </li>
-          <li class="skill">
+          <li class="skill tilt" data-reveal style="--d:1">
+            <span class="skill-mark" aria-hidden="true">WP</span>
+            <span class="skill-num" aria-hidden="true">04</span>
+            <span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h14l-1.2 12.1a1 1 0 0 1-1 .9H7.2a1 1 0 0 1-1-.9L5 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></span>
             <h3>WordPress وWooCommerce</h3>
             <p>تطوير مواقع الشركات والمتاجر وإدارة محتواها.</p>
           </li>
-          <li class="skill">
+          <li class="skill tilt" data-reveal style="--d:2">
+            <span class="skill-mark" aria-hidden="true">UX</span>
+            <span class="skill-num" aria-hidden="true">05</span>
+            <span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg></span>
             <h3>تحليل المتطلبات وتصميم الواجهات</h3>
             <p>فهم احتياجات المستخدم وتحويلها إلى شاشات ومسارات عمل.</p>
           </li>
@@ -103,19 +253,42 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section class="section" id="contact" aria-labelledby="contact-title">
-      <div class="container narrow">
-        <h2 id="contact-title">تواصل معي</h2>
-        <p class="lead">إذا عندك مشروع ويب أو فكرة تعاون، راسلني عبر البريد الإلكتروني.</p>
-        <a class="button" href="mailto:eng.abdelrahman.hamid@gmail.com">راسلني عبر البريد الإلكتروني</a>
-        <p class="email"><span dir="ltr">eng.abdelrahman.hamid@gmail.com</span></p>
+      <div class="container">
+        <div class="contact-card" data-reveal>
+          <div class="contact-glow" aria-hidden="true"></div>
+          <p class="kicker"><span>03</span> لنعمل معًا</p>
+          <h2 id="contact-title" class="contact-title">تواصل <span class="gradient-text">معي</span></h2>
+          <p class="lead">إذا عندك مشروع ويب أو فكرة تعاون، راسلني عبر البريد الإلكتروني.</p>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary btn-lg magnetic" href="mailto:eng.abdelrahman.hamid@gmail.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <span>راسلني عبر البريد الإلكتروني</span>
+            </a>
+          </div>
+
+          <div class="email-row">
+            <span class="email" dir="ltr">eng.abdelrahman.hamid@gmail.com</span>
+            <button class="copy-btn" type="button" data-copy="eng.abdelrahman.hamid@gmail.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg>
+              <span class="copy-label">نسخ البريد</span>
+            </button>
+          </div>
+          <p class="toast" role="status" aria-live="polite"></p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>© <span dir="ltr">2026</span> عبدالرحمن الصالح</p>
+    <div class="container footer-inner">
+      <p>© <span dir="ltr" data-year>2026</span> عبدالرحمن الصالح · جدة</p>
+      <a class="to-top" href="#top" aria-label="العودة إلى الأعلى">
+        <svg class="ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20"/><circle class="ring-fill" cx="22" cy="22" r="20"/></svg>
+        <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </a>
     </div>
   </footer>
 </body>
